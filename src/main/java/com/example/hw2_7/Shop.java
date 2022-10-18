@@ -4,7 +4,7 @@ import java.util.Queue;
 
 public class Shop {
     private String name;
-
+    private final static int MAX_SIZE = 5;
 
     public Shop(String name) {this.name = name;}
     public String getName() {return name;}
@@ -22,7 +22,7 @@ public class Shop {
     }
 
     public static void plusClient(Shop shop) {
-        if (queueA.size() == 5 && queueB.size() ==5){
+        if (queueA.size() == MAX_SIZE && queueB.size() == MAX_SIZE){
             System.out.println("позовите Галю!!!");
         }else if (queueA.size() == queueB.size()){
             System.out.println("очереди равны, я не знаю куда лучше мне встать");
@@ -41,8 +41,6 @@ public class Shop {
             System.out.println("клиент добавлен в очередь B");
         }
     }
-
-
     public static double getRandom(double min, double max){
         double x = (int)(Math.random()*((max-min)+1))+min;
         return x;
